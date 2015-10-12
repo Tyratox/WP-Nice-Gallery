@@ -37,13 +37,10 @@ function wp_nice_gallery_func($atts){
 		$code="<div class='row'>";
 		$first = true;
 		foreach ($ids_ as $id) {
-			$file = get_post($id);
-
-			$title = $file->post_excerpt;
-			$link = $file->guid;
+			$post = get_post($id);
 			
 			$code.='<div class="col-xs-6 col-md-3">
-			<a href="'.$link.'" class="thumbnail" data-imagelightbox="'.$wp_nice_gallery_counter.'"><img src="'.$link.'" alt="'.$title.'"/></a>
+			<a href="'.wp_get_attachment_url($id).'" class="thumbnail" data-imagelightbox="'.$wp_nice_gallery_counter.'"><img src="'.wp_get_attachment_thumb_url($id).'" alt="'.$post->post_excerpt.'"/></a>
 			</div>';
 	    }
 		$code.= "</div>";
