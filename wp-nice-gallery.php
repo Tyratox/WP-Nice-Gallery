@@ -40,7 +40,7 @@ function wp_nice_gallery_func($atts){
 			$post = get_post($id);
 			
 			$code.='<div class="col-xs-6 col-md-3">
-			<a href="'.wp_get_attachment_url($id).'" class="thumbnail" data-imagelightbox="'.$wp_nice_gallery_counter.'"><img src="'.wp_get_attachment_thumb_url($id).'" alt="'.$post->post_excerpt.'"/></a>
+			<a href="'.wp_get_attachment_url($id).'" class="thumbnail" data-imagelightbox="'.$wp_nice_gallery_counter.'"><img src="'.wp_get_attachment_image_src( $id, 'medium' )[0].'" alt="'.$post->post_excerpt.'"/></a>
 			</div>';
 	    }
 		$code.= "</div>";
