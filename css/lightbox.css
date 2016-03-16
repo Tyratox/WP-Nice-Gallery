@@ -1,6 +1,6 @@
 #imagelightbox{
     position: fixed!important;
-	z-index:205!important;
+	z-index:210!important;
 	box-shadow: 0 0 3.125em rgba( 0, 0, 0, .75 )!important;
 }
 #imagelightbox-overlay{
@@ -14,12 +14,13 @@
 }
 #imagelightbox-nav{
 	background-color: #444!important;
-	background-color: rgba( 0, 0, 0, .5 )!important;
+	background-color: rgba( 0, 0, 0, .7 )!important;
 	position: fixed!important;
 	z-index: 210!important;
 	left: 50%!important;
 	bottom: 3.75em!important; /* 60 */
-	padding: 0.313em!important; /* 5 */
+	padding: 0.7em!important; /* 5 */
+	line-height: 0em;
 	-webkit-transform: translateX( -50% );
 	-moz-transform: translateX( -50% );
 	-ms-transform: translateX( -50% );
@@ -28,11 +29,12 @@
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
+	box-shadow: 0 0 1.125em rgba( 0, 0, 0, 0.5 )!important;
 }
 #imagelightbox-nav a{
 	width: 1em!important; /* 20 */
 	height: 1em!important; /* 20 */
-	border: 1px solid #fff!important;
+	border: 2px solid #fff!important;
 	display: inline-block!important;
 	margin: 0 0.313em!important; /* 5 */
 	-webkit-border-radius: 50%!important;
@@ -40,7 +42,7 @@
 	border-radius: 50%!important;
 }
 #imagelightbox-nav a.active{
-	background-color: #fff!important;
+	border: 8px solid white!important;
 }
 #imagelightbox-loading, #imagelightbox-loading div{
 	-webkit-border-radius: 50%;
@@ -53,7 +55,7 @@
 	background-color: #444!important;
 	background-color: rgba( 0, 0, 0, .5 )!important;
 	position: fixed!important;
-	z-index: 220!important;
+	z-index: 205!important;
 	top: 50%!important;
 	left: 50%!important;
 	padding: 0.625em!important; /* 10 */
@@ -66,10 +68,10 @@
 	width: 100%!important; /* 20 */
 	height: 100%!important; /* 20 */
 	background-color: #fff!important;
-	-webkit-animation: imagelightbox-loading .5s ease infinite!important;
-	-moz-animation: imagelightbox-loading .5s ease infinite!important;
-	-o-animation: imagelightbox-loading .5s ease infinite!important;
-	animation: imagelightbox-loading .5s ease infinite!important;
+	-webkit-animation: imagelightbox-loading .5s ease-in-out infinite!important;
+	-moz-animation: imagelightbox-loading .5s ease-in-out infinite!important;
+	-o-animation: imagelightbox-loading .5s ease-in-out infinite!important;
+	animation: imagelightbox-loading .5s ease-in-out infinite!important;
 }
 
 @-webkit-keyframes imagelightbox-loading{
@@ -92,6 +94,24 @@
 	50%	 { opacity: 1;	transform: scale( 1 ); }
 	to	 { opacity: .5;	transform: scale( .75 ); }
 }
+
+@-webkit-keyframes fade-in{
+	from { opacity: .0; }
+	to { opacity: 1; }
+}
+@-moz-keyframes fade-in{
+	from { opacity: .0; }
+	to { opacity: 1; }
+}
+@-o-keyframes fade-in{
+	from { opacity: .0; }
+	to { opacity: 1; }
+}
+@keyframes fade-in{
+	from { opacity: .0; }
+	to { opacity: 1; }
+}
+
 #imagelightbox-caption{
 	width:100%!important;
 	text-align: center!important;
